@@ -13,9 +13,20 @@ public class SnakeLadder {
 			int diceValue = random.nextInt(6)+1;
 			System.out.println("\nDice Value : "+diceValue);
 			
-			int position = 0;
+			int position = 0;			
+			int option = random.nextInt(3);
+			
+			if(option == 1) // if option = 0 No change in position 
+				position+=diceValue;
+			
+			else if(option == 2)
+				position-=diceValue;
+			
+			if(position < 0)
+				position=0;
+			System.out.println("\nOption : "+option);
 			System.out.println("\nPOSITION : "+position);
-		
+
 	}
 
 }
