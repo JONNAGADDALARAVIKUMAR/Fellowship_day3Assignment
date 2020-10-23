@@ -12,8 +12,8 @@ public class SnakeLadder {
 			Random random = new Random();
 			int position = 0;		
 			int option;
-			int diceValue;
-
+			int diceValue,count=0;
+			
 
 			
 			while(position < 100)
@@ -21,7 +21,7 @@ public class SnakeLadder {
 				
 				diceValue = random.nextInt(6)+1;
 				option = random.nextInt(3);
-				System.out.println("\nDice Value : "+diceValue);
+				count++;
 			
 			
 				if(option == 1) // if option = 0 No change in position 
@@ -35,9 +35,13 @@ public class SnakeLadder {
 				
 				if(position > 100)
 					position-=diceValue;
-				System.out.println("\nOption : "+option);//Prints up to getting 100th position
-				System.out.println("\nPOSITION : "+position);
+				
+				System.out.println("Position : "+position);
+				
 			}
+			
+			System.out.println("No of times Dice rolled : "+count);
+			
 
 	}
 
