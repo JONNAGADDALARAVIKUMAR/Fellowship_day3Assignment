@@ -6,26 +6,38 @@ public class SnakeLadder {
 
 	public static void main(String[] args) {
 		
-			System.out.println("Snake and Ladder game by Single player\n\nThe game is supposed to start");
+			System.out.println("Snake and Ladder game by Single player");
 			
 			
 			Random random = new Random();
-			int diceValue = random.nextInt(6)+1;
-			System.out.println("\nDice Value : "+diceValue);
+			int position = 0;		
+			int option;
+			int diceValue;
+
+
 			
-			int position = 0;			
-			int option = random.nextInt(3);
+			while(position < 100)
+			{
+				
+				diceValue = random.nextInt(6)+1;
+				option = random.nextInt(3);
+				System.out.println("\nDice Value : "+diceValue);
 			
-			if(option == 1) // if option = 0 No change in position 
-				position+=diceValue;
 			
-			else if(option == 2)
-				position-=diceValue;
+				if(option == 1) // if option = 0 No change in position 
+					position+=diceValue;
 			
-			if(position < 0)
-				position=0;
-			System.out.println("\nOption : "+option);
-			System.out.println("\nPOSITION : "+position);
+				else if(option == 2)
+					position-=diceValue;
+				
+				if(position < 0)
+					position=0;
+				
+				if(position > 100)
+					position-=diceValue;
+				System.out.println("\nOption : "+option);//Prints up to getting 100th position
+				System.out.println("\nPOSITION : "+position);
+			}
 
 	}
 
